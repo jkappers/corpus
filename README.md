@@ -1,5 +1,9 @@
 # Corpus
 
+![Corpus poster](https://pub-d086f5c4d0c9453ba79685c8ea9a18dd.r2.dev/poster.png)
+
+[Watch the product video](https://pub-d086f5c4d0c9453ba79685c8ea9a18dd.r2.dev/corpus-product-video.mp4)
+
 Corpus is a minimal, self-hosted workspace for writing and diagramming. Teams write **pages** and sketch **boards** together in shared **spaces**, on infrastructure the organization controls.
 
 Most team knowledge ends up in hosted tools that the organization cannot inspect, export cleanly, or automate without friction. Corpus takes the opposite approach. The data stays on your servers. Admins can see who did what. Anything a person can do in the UI, a script or an AI agent can do through the API.
