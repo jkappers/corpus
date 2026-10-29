@@ -15,17 +15,13 @@ Also included: versioned history with restore, inline notes and tasks (notations
 
 The web app only renders screens. Every write goes through the REST API. The REST API and the MCP server call the same domain layer.
 
-```
-Browser (Inertia + React)
-        │ screens                    ┌──────────────┐
-        ▼                            │  MCP clients │
-   routes/web.php                    └──────┬───────┘
-        │                                   │ OAuth
-        ▼                                   ▼
-  /api/v1 (REST, tokens/session)      /mcp (MCP server)
-        └──────────────┬────────────────────┘
-                       ▼
-        Actions · Queries · Policies · Models
+```mermaid
+flowchart TD
+    Browser["Browser (Inertia + React)"] -->|screens| Web["routes/web.php"]
+    Web --> API["/api/v1 (REST, tokens/session)"]
+    MCP["MCP clients"] -->|OAuth| MCPS["/mcp (MCP server)"]
+    API --> Domain["Actions · Queries · Policies · Models"]
+    MCPS --> Domain
 ```
 
 | Path | Contents |
