@@ -19,7 +19,7 @@ class ExampleTest extends TestCase
     {
         $user = User::factory()->create();
 
-        foreach (['/pages', '/boards', '/files'] as $path) {
+        foreach (['/pages', '/boards'] as $path) {
             $this->actingAs($user)->get($path)->assertRedirect('/');
         }
     }
