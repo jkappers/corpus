@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-28T00:00:00Z",
+  "title": "Design System: Corpus",
+  "extensions": {
+    "colorMeta": {
+      "signal-blue": { "role": "primary", "displayName": "Signal Blue", "canonical": "#1d4ed8", "tonalRamp": ["#0b1f5c", "#12338f", "#1d4ed8", "#4a73e6", "#7aa2ff", "#a9c1ff", "#d3e0ff", "#eef2fd"] },
+      "ground": { "role": "neutral", "displayName": "Ground", "canonical": "#fcfcfd", "tonalRamp": ["#0a0b0d", "#0e0f12", "#16181c", "#22252a", "#d7dae0", "#e8e9ed", "#f5f6f8", "#fcfcfd"] },
+      "ink": { "role": "neutral", "displayName": "Ink", "canonical": "#16181d", "tonalRamp": ["#16181d", "#4a505b", "#646a76", "#858b96", "#a9aeb8", "#d7dae0", "#e8e9ed", "#f1f2f5"] }
+    },
+    "typographyMeta": {
+      "body": { "displayName": "Body", "purpose": "Default UI text, 14px." },
+      "ui": { "displayName": "UI", "purpose": "Buttons and dense row text." },
+      "label": { "displayName": "Label", "purpose": "Field labels and table headers." },
+      "tag": { "displayName": "Tag", "purpose": "Mono uppercase status chips." },
+      "prose-body": { "displayName": "Prose", "purpose": "Rendered page content." }
+    },
+    "shadows": [
+      { "name": "floating", "value": "0 8px 24px -12px rgb(10 11 13 / 0.3)", "purpose": "Popovers and dialogs only." }
+    ],
+    "motion": [
+      { "name": "control", "value": "100ms colors", "purpose": "Button and handle state transitions." }
+    ],
+    "breakpoints": []
+  },
+  "components": [
+    {
+      "name": "Default Button",
+      "kind": "button",
+      "refersTo": "button-default",
+      "description": "Standard action.",
+      "html": "<button class=\"ds-btn\">Cancel</button>",
+      "css": ".ds-btn{display:inline-flex;align-items:center;height:28px;padding:0 10px;border:1px solid #d7dae0;border-radius:4px;background:#fff;color:#16181d;font:500 13px Inter,system-ui,sans-serif;cursor:pointer;transition:background 100ms,border-color 100ms}.ds-btn:hover{background:#f1f2f5;border-color:#858b96}.ds-btn:focus-visible{outline:2px solid #1d4ed8;outline-offset:2px}"
+    },
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The one main action on a screen.",
+      "html": "<button class=\"ds-btn-primary\">Save</button>",
+      "css": ".ds-btn-primary{display:inline-flex;align-items:center;height:28px;padding:0 10px;border:1px solid transparent;border-radius:4px;background:#1d4ed8;color:#fff;font:500 13px Inter,system-ui,sans-serif;cursor:pointer;transition:filter 100ms}.ds-btn-primary:hover{filter:brightness(1.1)}.ds-btn-primary:focus-visible{outline:2px solid #16181d;outline-offset:2px}"
+    },
+    {
+      "name": "Quiet Button",
+      "kind": "button",
+      "refersTo": "button-quiet",
+      "description": "Low-emphasis action.",
+      "html": "<button class=\"ds-btn-quiet\">Edit</button>",
+      "css": ".ds-btn-quiet{display:inline-flex;align-items:center;height:28px;padding:0 10px;border:1px solid transparent;border-radius:4px;background:transparent;color:#16181d;font:500 13px Inter,system-ui,sans-serif;cursor:pointer;transition:background 100ms}.ds-btn-quiet:hover{background:#f1f2f5}.ds-btn-quiet:focus-visible{outline:2px solid #1d4ed8;outline-offset:2px}"
+    },
+    {
+      "name": "Text Input",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Single-line field with label.",
+      "html": "<label class=\"ds-label\">Title<input class=\"ds-input\" placeholder=\"Untitled\"></label>",
+      "css": ".ds-label{display:block;font:500 12px Inter,system-ui,sans-serif;color:#4a505b}.ds-input{display:block;box-sizing:border-box;width:100%;height:28px;margin-top:4px;padding:0 8px;border:1px solid #858b96;border-radius:4px;background:#fff;color:#16181d;font:400 13px Inter,system-ui,sans-serif}.ds-input::placeholder{color:#646a76}.ds-input:focus{border-color:#1d4ed8;outline:none}"
+    },
+    {
+      "name": "Tag",
+      "kind": "chip",
+      "refersTo": "tag",
+      "description": "Mono uppercase type or status chip.",
+      "html": "<span class=\"ds-tag\">Board</span>",
+      "css": ".ds-tag{display:inline-flex;align-items:center;height:20px;padding:0 6px;border:1px solid #d7dae0;border-radius:2px;color:#646a76;font:400 11px ui-monospace,Menlo,monospace;letter-spacing:.04em;text-transform:uppercase}"
+    },
+    {
+      "name": "Table Row",
+      "kind": "custom",
+      "refersTo": "table-row",
+      "description": "Ruled 32px list row.",
+      "html": "<div class=\"ds-row\"><span>Quarterly plan</span><span class=\"ds-meta\">2 days ago</span></div>",
+      "css": ".ds-row{display:flex;justify-content:space-between;align-items:center;min-height:32px;padding:0 8px;border-bottom:1px solid #e8e9ed;color:#16181d;font:400 14px Inter,system-ui,sans-serif}.ds-row:hover{background:#f1f2f5}.ds-meta{color:#646a76;font-size:12px}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Quiet Ledger",
+    "overview": "Corpus looks like a well-kept record: ruled lines, tight rows, neutral paper, and a single blue used to mark what is active or actionable. Nothing decorates. Structure comes from hairlines and tonal steps between ground, rail, and raised surfaces, not from shadows or color.",
+    "keyCharacteristics": [
+      "Flat by default; hairlines do the work of shadows.",
+      "One accent, Signal Blue, never decorative.",
+      "4px maximum radius; 2px for tags and inline code.",
+      "Dense controls, tabular numerals on, one typeface plus mono.",
+      "Brand lives in precision, not ornament."
+    ],
+    "rules": [
+      { "name": "The One Voice Rule", "body": "Signal Blue is the only chromatic accent. Status colors mark state, never emphasis.", "section": "colors" },
+      { "name": "The Twin Rule", "body": "Every color is defined in both themes. A new token ships with its dark value or not at all.", "section": "colors" },
+      { "name": "The Weight Not Size Rule", "body": "Inside chrome, separate levels with weight (400/500/600) and ink tone before reaching for a larger size.", "section": "typography" },
+      { "name": "The Hairline Rule", "body": "Separate with a 1px border before adding a shadow. Shadows are reserved for things that float.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do separate regions with 1px Rule or Line borders.",
+      "Do use Signal Blue for the single most important action, current state, and focus.",
+      "Do define every new color in light and dark.",
+      "Do keep controls at 28px (44px on coarse pointers).",
+      "Do use the .input, .label, .tag, .th, .tr component classes before writing new styles."
+    ],
+    "donts": [
+      "Don't add shadows to resting surfaces.",
+      "Don't exceed a 4px radius or use pill shapes.",
+      "Don't introduce a second accent color.",
+      "Don't use color alone for status; pair it with text or an icon.",
+      "Don't enlarge chrome type to create hierarchy; use weight and ink tone."
+    ]
+  }
+}
